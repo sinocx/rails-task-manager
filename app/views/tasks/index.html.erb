@@ -1,0 +1,19 @@
+<h1>MY task</h1>
+<div class="row">
+  <ul>
+    <div class="col-xs-offset-2 col-xs-8">
+      <% @tasks.each do |task| %>
+      <div class="task">
+        <li><%= link_to "#{task.title}", task_path(task) %></li>
+        <p><%= task.details %></p>
+        <p><%= task.completed %></p>
+        <%= link_to "", task_path(task), method: :delete,
+        data: { confirm: "Tes sur ?"}, class: "fa fa-trash" %>
+      </div>
+      <% end %>
+    </div>
+  </ul>
+      <%= link_to "Add New Task", new_task_path, class: "btn btn-primary" %>
+</div>
+
+<i></i>
